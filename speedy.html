@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>speedy</title>
+        <link rel="stylesheet" type="text/css" href="css/style.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons&text=pause,play_arrow,file_upload,replay" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <textarea id="textbox" required placeholder="enter text or drop file"></textarea>        
+        <div class="start-wrapper">
+            <div id="start">start</div>
+        </div>
+        <i id="uploadIcon" class="material-icons">file_upload</i>
+        <div id="readerView">
+            <div id="exit"></div>
+            <div class="container left-text"><p class="text" id="left"></p></div>
+            <div class="container right-text"><p class="text"><span id="middle"></span><span id="right"></span></p></div>
+            <div id="control">
+                <div id="pauseplay"><i class="material-icons" id="pauseIcon">pause</i></div>
+                <select id="wpm">
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400</option>
+                    <option value="500">500</option>
+                    <option value="600" selected >600</option>
+                    <option value="700">700</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                    <option value="1000">1000</option>
+                </select>
+                <div id="progress-total"><div id="progress"></div></div>
+            </div>
+        </div>
+        <script src="js/app.min.js"></script>
+    </body>
+</html>

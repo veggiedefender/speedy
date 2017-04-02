@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+body {
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    background-color: #161616;
+    overflow: hidden;
+}
+p {
+    font-size: 70px;
+    margin: 0;
+}
+
+.start-wrapper {
+    position: fixed;
+    bottom: 20px;
+    width: 100vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+#start {
+    font-size: 1.2em;
+    background-color: #fff;
+    padding: 10px 50px 10px 50px;
+    border-radius: 50px;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 3px 3px 10px 0px black;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+} #start:hover {
+    box-shadow: 9px 9px 10px 0px black;
+}
+
+#textbox:not(:invalid) + .start-wrapper{
+    visibility: visible;
+    opacity: 1;
+}
+#textbox {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    background-color: inherit;
+    border: 0;
+    outline: 0;
+    color: #4c4c4c;
+    font-size: 40px;
+    text-align: left;
+    resize: none;
+} #textbox::placeholder {
+    color: #4c4c4c;
+}
+
+#readerView {
+    position: fixed;
+    top: 40vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+.container {
+    width: 50vw;
+    margin: 0;
+    height: 90px;
+    background-color: white;
+    display: inline-block;
+    outline: 8px solid black;
+    position: relative;
+    z-index: -1;
+}
+
+.left-text {
+    float: left;
+}
+.right-text {
+    float: right;
+}
+.text {
+    margin-top: 9px;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+}
+
+#left {
+    float: right;    
+    margin-right: 0.5ch;
+}
+#middle {
+    color: red;
+    float: left;
+    margin-left: -0.5ch;
+    background-color: white;
+}
+#right {
+    float: left;
+    display: inline-block;
+}
+
+#control {
+    width: 100vw;
+    margin-top: 8px;
+    height: 24px;
+    transition: 0.3s;
+    display: inline-block;
+    user-select: none;
+}
+#pauseplay {
+    width: 24px;
+    height: 24px;
+    float: left;
+    text-align: center;
+    color: #fff;
+    background-color: #444;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+} #pauseplay:hover {
+    background-color: #a1a1a1;
+}
+#wpm option {
+    background-color: #444;
+}
+#wpm {
+    font-family: inherit;
+    font-size: inherit;
+    display: inline-block;
+    background-color: #444;
+    color: #fff;
+    outline: 0;
+    border: 0;
+    width: 10ch;
+    height: 100%;
+    margin: 0 3px 0 3px;
+} #wpm:hover {
+    background-color: #a1a1a1;
+}
+#progress-total {
+    width: calc(100% - 24px - 10ch - 6px);
+    height: 100%;
+    float: right;
+    background-color: #242424;
+    cursor: pointer;
+}
+#progress {
+    height: 100%;
+    width: 0;
+    background-color: #a1a1a1;
+}
+
+#exit {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+.dragging {
+    border: 8px dashed #4c4c4c !important;
+}
+
+#uploadIcon {
+    position: fixed;
+    color: #4c4c4c;
+    top: 50vh;
+    left: 50vw;
+    margin-left: -17.5vw;
+    margin-top: -17.5vh;
+    font-size: 35vw;
+    display: none;
+    pointer-events: none;
+}
+.dragging-upload {
+    display: block !important;
+}
